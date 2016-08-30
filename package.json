@@ -1,6 +1,6 @@
 {
   "name": "sanajk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Ukagaka SHIORI subsystem 'SanaJK'",
   "keywords": [],
   "main": "./es5/lib/sanajk.js",
