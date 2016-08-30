@@ -1,0 +1,23 @@
+{
+  "name": "sanajk",
+  "description": "Ukagaka SHIORI subsystem 'SanaJK'",
+  "dependencies": {
+  },
+  "main": ["./web/sanajk.js"],
+  "ignore": [
+    "**/.sw?",
+    "**/.*.sw?",
+    "bower_components",
+    "node_modules",
+    "npm-debug.log",
+    "/coverage",
+    "/doc",
+    "/.*",
+    "appveyor.yml",
+    "gulpfile.babel.js",
+    "karma.conf.js",
+    "webpack.config.js",
+    "esdoc.json"
+  ],
+  "license": "MIT"
+}
