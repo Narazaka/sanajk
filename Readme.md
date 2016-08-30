@@ -43,7 +43,7 @@ import {SanaJK, ok, no_content, bad_request, internal_server_error} from 'SanaJK
 
 browser:
 ```html
-<script src="sanajk"></script>
+<script src="sanajk.js"></script>
 var SanaJK = sanajk.SanaJK;
 ```
 
