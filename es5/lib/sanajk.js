@@ -207,7 +207,7 @@ var SanaJK = exports.SanaJK = function () {
               case 8:
                 _context3.prev = 8;
 
-                if (!transaction.request.request_line.version.startsWith('2')) {
+                if (!/^2/.test(transaction.request.request_line.version.toString())) {
                   _context3.next = 11;
                   break;
                 }

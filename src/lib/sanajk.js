@@ -87,7 +87,7 @@ export class SanaJK {
       return this._build_response(bad_request());
     }
     try {
-      if (transaction.request.request_line.version.startsWith('2')) {
+      if (/^2/.test(transaction.request.request_line.version.toString())) {
         return this._build_response(bad_request());
       }
       const request = transaction.request.to('3.0');
