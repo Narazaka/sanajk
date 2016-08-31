@@ -63,7 +63,7 @@ export class SanaJK {
      * @type {string}
      */
     this.dirpath = dirpath;
-    if (this._has_event('_load')) return await this._load(dirpath);
+    if (this._has_event('_load')) return await this.events._load(dirpath);
   }
 
   /**
@@ -71,7 +71,7 @@ export class SanaJK {
    * @return {Promise<number>} status code
    */
   async unload() {
-    if (this._has_event('_unload')) return await this._unload();
+    if (this._has_event('_unload')) return await this.events._unload();
   }
 
   /**
@@ -94,7 +94,7 @@ export class SanaJK {
       const id = request.headers.header.ID;
       let response;
       if (this._has_event(id)) response = await this.events[id](request);
-      if (typeof response === 'string' || typeof response === 'number'
+      if (response == null || typeof response === 'string' || typeof response === 'number'
         || response instanceof String || response instanceof Number) {
         return this._build_response(ok(response));
       } else {
