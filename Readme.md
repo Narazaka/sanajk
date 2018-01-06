@@ -1,5 +1,7 @@
 # [SanaJK](https://github.com/Narazaka/sanajk)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Narazaka/sanajk.svg)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/sanajk.svg)](https://www.npmjs.com/package/sanajk)
 [![npm license](https://img.shields.io/npm/l/sanajk.svg)](https://www.npmjs.com/package/sanajk)
 [![npm download total](https://img.shields.io/npm/dt/sanajk.svg)](https://www.npmjs.com/package/sanajk)
