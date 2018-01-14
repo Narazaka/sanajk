@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.11.6",
-    "shiori_transaction": "^1.0.2",
+    "shiori_transaction": "^2.0.4",
     "shiorijk": "^0.8.2"
   },
   "devDependencies": {
