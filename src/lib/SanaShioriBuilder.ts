@@ -24,15 +24,28 @@ export class SanaShioriBuilder<State = {}> extends ShioriBuilder<State> {
     /** use default middlewares */
     useDefaults<SaveData = {}>(options: UseDefaultOption<State> = {}) {
         return this
-            .use(exitMiddleware)
-            .use(dirpathMiddleware())
-            .use(saveLoadMiddleware<SaveData>(options.save || "save.json"))
-            .use(completeResponseMiddleware())
-            .use(errorResponseMiddleware)
+            .useExit()
+            .useDirpath()
+            .useSaveLoad<SaveData>(options.save)
+            .useCompleteResponse()
+            .useErrorResponse()
             .use(senderMiddleware)
-            .use(genericEventMiddleware(options.events))
+            .useGenericEvent(options.events)
             ;
     }
+
+    /** must be first middleware */
+    useExit() { return this.use(exitMiddleware); }
+    /** any order */
+    useDirpath() { return this.use(dirpathMiddleware()); }
+    /** any order */
+    useSaveLoad<SaveData = {}>(filename = "save.json") { return this.use(saveLoadMiddleware<SaveData>(filename)); }
+    /** must be first one of request middlewares */
+    useCompleteResponse() { return this.use(completeResponseMiddleware()); }
+    /** must be after completeResponse */
+    useErrorResponse() { return this.use(errorResponseMiddleware); }
+    /** must be after completeResponse */
+    useGenericEvent(events?: genericEventMiddleware.Events<State>) { return this.use(genericEventMiddleware(events)); }
 
     /**
      * add middleware
