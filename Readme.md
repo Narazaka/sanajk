@@ -37,6 +37,9 @@ export = builder.build();
 
 ```
 
+```bash
+shiolinkjs ./shiori.js
+```
 
 ## API
 
