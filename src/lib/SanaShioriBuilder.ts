@@ -16,14 +16,14 @@ import * as senderMiddleware from "../lib/middlewares/senderMiddleware";
 /** SHIORI subsystem interface builder */
 export class SanaShioriBuilder<State = {}> extends ShioriBuilder<State> {
     /** use default middlewares */
-    useDefaults() {
+    useDefaults(events?: genericEventMiddleware.Events<State>) {
         return this
             .use(exitMiddleware)
             .use(dirpathMiddleware())
             .use(completeResponseMiddleware())
             .use(errorResponseMiddleware)
             .use(senderMiddleware)
-            .use(genericEventMiddleware())
+            .use(genericEventMiddleware(events))
             ;
     }
 
