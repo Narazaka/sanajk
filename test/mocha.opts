@@ -1,3 +1,2 @@
---compilers js:babel-register
---ui mocha-lazy-bdd
---recursive
+--require espower-typescript/guess
+src/test/*.ts

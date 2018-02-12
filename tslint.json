@@ -1,0 +1,31 @@
+{
+    "extends": [
+        "tslint:all"
+    ],
+    "rules": {
+        "typedef": false,
+        "member-access": false,
+        "variable-name": [
+            true,
+            "check-format",
+            "allow-leading-underscore",
+            "allow-pascal-case"
+        ],
+        "curly": false,
+        "object-literal-sort-keys": false,
+        "interface-name": [
+            true,
+            "never-prefix"
+        ],
+        "only-arrow-functions": false,
+        "member-ordering": false,
+        "no-any": false,
+        "comment-format": [
+            true,
+            "check-space"
+        ],
+        "no-unsafe-any": false,
+        "strict-boolean-expressions": false,
+        "no-inferred-empty-object-type": false
+    }
+}
