@@ -9,7 +9,7 @@ const middleware: <State>() => ShioriMiddlewareWithState<State, middleware.Event
             if (event) {
                 return handleRequestLazy(ctx.request, () => event(ctx));
             } else {
-                return next();
+                return handleRequestLazy(ctx.request, next);
             }
         },
         state: { events: {} },
