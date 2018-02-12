@@ -11,19 +11,26 @@ import * as dirpathMiddleware from "../lib/middlewares/dirpathMiddleware";
 import * as errorResponseMiddleware from "../lib/middlewares/errorResponseMiddleware";
 import * as exitMiddleware from "../lib/middlewares/exitMiddleware";
 import * as genericEventMiddleware from "../lib/middlewares/genericEventMiddleware";
+import * as saveLoadMiddleware from "../lib/middlewares/saveLoadMiddleware";
 import * as senderMiddleware from "../lib/middlewares/senderMiddleware";
+
+export interface UseDefaultOption<State> {
+    save?: string;
+    events?: genericEventMiddleware.Events<State>;
+}
 
 /** SHIORI subsystem interface builder */
 export class SanaShioriBuilder<State = {}> extends ShioriBuilder<State> {
     /** use default middlewares */
-    useDefaults(events?: genericEventMiddleware.Events<State>) {
+    useDefaults<SaveData = {}>(options: UseDefaultOption<State> = {}) {
         return this
             .use(exitMiddleware)
             .use(dirpathMiddleware())
+            .use(saveLoadMiddleware<SaveData>(options.save || "save.json"))
             .use(completeResponseMiddleware())
             .use(errorResponseMiddleware)
             .use(senderMiddleware)
-            .use(genericEventMiddleware(events))
+            .use(genericEventMiddleware(options.events))
             ;
     }
 
