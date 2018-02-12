@@ -7,7 +7,12 @@ const middleware: <State>() => ShioriMiddlewareWithState<State, middleware.Event
             const id = ctx.request.headers.ID as string;
             const event = ctx.state.events[id];
             if (event) {
-                return handleRequestLazy(ctx.request, () => event(ctx));
+                return handleRequestLazy(ctx.request, async () => {
+                    const response = await event(ctx);
+
+                    // tslint:disable-next-line triple-equals no-null-keyword
+                    return response == null ? next() : response; // 返り値がなかったら後続ミドルへ
+                });
             } else {
                 return handleRequestLazy(ctx.request, next);
             }
