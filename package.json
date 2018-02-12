@@ -22,7 +22,7 @@
   "dependencies": {
     "debug": "^3.1.0",
     "fso": "^2.5.15",
-    "shiorack": "^2.1.1",
+    "shiorack": "^2.2.0",
     "shiori-request-helper": "^2.3.0",
     "shiorijk": "^1.0.1"
   },
