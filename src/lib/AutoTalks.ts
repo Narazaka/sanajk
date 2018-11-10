@@ -104,26 +104,25 @@ export class AutoTalks<State> {
     }
 }
 
-export function auto<State>(weight: number, ...talks: Array<AutoTalkLike<State>>): AutoTalks<State>;
-// tslint:disable-next-line unified-signatures
-export function auto<State>(tags: AutoTalkTags, ...talks: Array<AutoTalkLike<State>>): AutoTalks<State>;
-export function auto<State>(weight: number, tags: AutoTalkTags, ...talks: Array<AutoTalkLike<State>>): AutoTalks<State>;
-export function auto<State>(tags: AutoTalkTags, weight: number, ...talks: Array<AutoTalkLike<State>>): AutoTalks<State>;
 export function auto<State>(...talks: Array<AutoTalkLike<State>>): AutoTalks<State>;
+export function auto<State>(tags: AutoTalkTags, ...talks: Array<AutoTalkLike<State>>): AutoTalks<State>;
 export function auto<State>(...args: any[]) {
-    if (typeof args[0] === "number") {
-        if (args[1] instanceof Array || args[1] instanceof Set || args[1] === undefined) {
-            return new AutoTalks<State>(args.slice(2), args[0], args[1]);
-        } else {
-            return new AutoTalks<State>(args.slice(1), args[0]);
-        }
-    } else if (args[0] instanceof Array || args[0] instanceof Set || args[0] === undefined) {
-        if (typeof args[1] === "number") {
-            return new AutoTalks<State>(args.slice(2), args[1], args[0]);
-        } else {
-            return new AutoTalks<State>(args.slice(1), 1, args[0]);
-        }
+    if (args[0] instanceof Array || args[0] instanceof Set || args[0] === undefined) {
+        return new AutoTalks<State>(args.slice(1), -1, args[0]);
     } else {
         return new AutoTalks<State>(args);
+    }
+}
+
+export function autow<State>(
+    weight: AutoTalkWeight<State>, ...talks: Array<AutoTalkLike<State>>): AutoTalks<State>;
+// tslint:disable-next-line unified-signatures
+export function autow<State>(
+    weight: AutoTalkWeight<State>, tags: AutoTalkTags, ...talks: Array<AutoTalkLike<State>>): AutoTalks<State>;
+export function autow<State>(...args: any[]) {
+    if (args[1] instanceof Array || args[1] instanceof Set || args[1] === undefined) {
+        return new AutoTalks<State>(args.slice(2), args[0], args[1]);
+    } else {
+        return new AutoTalks<State>(args.slice(1), args[0]);
     }
 }

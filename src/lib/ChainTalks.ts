@@ -102,51 +102,45 @@ export class ChainTalks<State> extends AutoTalks<State> {
     }
 }
 
-function genChain(stack: boolean) {
-    return function genericChain<State>(...args: any[]) {
-        if (typeof args[0] === "number") {
-            if (args[1] instanceof Array || args[1] instanceof Set || args[1] === undefined) {
-                return new ChainTalks<State>(stack, args.slice(2), args[0], args[1]);
-            } else {
-                return new ChainTalks<State>(stack, args.slice(1), args[0]);
-            }
-        } else if (args[0] instanceof Array || args[0] instanceof Set || args[0] === undefined) {
-            if (typeof args[1] === "number") {
-                return new ChainTalks<State>(stack, args.slice(2), args[1], args[0]);
-            } else {
-                return new ChainTalks<State>(stack, args.slice(1), 1, args[0]);
-            }
-        } else {
-            return new ChainTalks<State>(stack, args);
-        }
-    };
-}
-
-const chainFuncCache = {
-    chain: genChain(true),
-    endchain: genChain(false),
-};
-
-export function chain<State>(weight: number, ...talks: Array<AutoTalkLike<State>>): ChainTalks<State>;
-// tslint:disable-next-line unified-signatures
-export function chain<State>(tags: AutoTalkTags, ...talks: Array<AutoTalkLike<State>>): ChainTalks<State>;
-export function chain<State>(weight: number, tags: AutoTalkTags, ...talks: Array<AutoTalkLike<State>>):
-    ChainTalks<State>;
-export function chain<State>(tags: AutoTalkTags, weight: number, ...talks: Array<AutoTalkLike<State>>):
-    ChainTalks<State>;
 export function chain<State>(...talks: Array<AutoTalkLike<State>>): ChainTalks<State>;
+export function chain<State>(tags: AutoTalkTags, ...talks: Array<AutoTalkLike<State>>): ChainTalks<State>;
 export function chain<State>(...args: any[]) {
-    return chainFuncCache.chain<State>(...args);
+    if (args[0] instanceof Array || args[0] instanceof Set || args[0] === undefined) {
+        return new ChainTalks<State>(true, args.slice(1), 1, args[0]);
+    } else {
+        return new ChainTalks<State>(true, args);
+    }
 }
 
-export function endchain<State>(weight: number, ...talks: Array<AutoTalkLike<State>>): ChainTalks<State>;
-// tslint:disable-next-line unified-signatures
-export function endchain<State>(tags: AutoTalkTags, ...talks: Array<AutoTalkLike<State>>): ChainTalks<State>;
-export function endchain<State>(weight: number, tags: AutoTalkTags, ...talks: Array<AutoTalkLike<State>>):
-    ChainTalks<State>;
-export function endchain<State>(tags: AutoTalkTags, weight: number, ...talks: Array<AutoTalkLike<State>>):
-    ChainTalks<State>;
+export function chainw<State>(weight: AutoTalkWeight<State>, ...talks: Array<AutoTalkLike<State>>): ChainTalks<State>;
+export function chainw<State>(
+    weight: AutoTalkWeight<State>, tags: AutoTalkTags, ...talks: Array<AutoTalkLike<State>>): ChainTalks<State>;
+export function chainw<State>(...args: any[]) {
+    if (args[1] instanceof Array || args[1] instanceof Set || args[1] === undefined) {
+        return new ChainTalks<State>(true, args.slice(2), args[0], args[1]);
+    } else {
+        return new ChainTalks<State>(true, args.slice(1), args[0]);
+    }
+}
+
 export function endchain<State>(...talks: Array<AutoTalkLike<State>>): ChainTalks<State>;
+export function endchain<State>(tags: AutoTalkTags, ...talks: Array<AutoTalkLike<State>>): ChainTalks<State>;
 export function endchain<State>(...args: any[]) {
-    return chainFuncCache.endchain<State>(...args);
+    if (args[0] instanceof Array || args[0] instanceof Set || args[0] === undefined) {
+        return new ChainTalks<State>(false, args.slice(1), 1, args[0]);
+    } else {
+        return new ChainTalks<State>(false, args);
+    }
+}
+
+export function endchainw<State>(
+    weight: AutoTalkWeight<State>, ...talks: Array<AutoTalkLike<State>>): ChainTalks<State>;
+export function endchainw<State>(
+    weight: AutoTalkWeight<State>, tags: AutoTalkTags, ...talks: Array<AutoTalkLike<State>>): ChainTalks<State>;
+export function endchainw<State>(...args: any[]) {
+    if (args[1] instanceof Array || args[1] instanceof Set || args[1] === undefined) {
+        return new ChainTalks<State>(false, args.slice(2), args[0], args[1]);
+    } else {
+        return new ChainTalks<State>(false, args.slice(1), args[0]);
+    }
 }
