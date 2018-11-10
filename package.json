@@ -6,8 +6,7 @@
   "main": "./dist/lib/index.js",
   "types": "./dist/lib/index.d.ts",
   "files": [
-    "dist/lib",
-    "gen"
+    "dist/lib"
   ],
   "scripts": {
     "prepare": "npm run dist",
