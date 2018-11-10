@@ -1,11 +1,11 @@
 import { RequestContext, ShioriMiddlewareWithState } from "shiorack";
 import { handleRequestLazy, RequestCallbackReturnValue } from "shiori-request-helper";
 
-const middleware: <State>(events?: middleware.Events<State>) =>
-    ShioriMiddlewareWithState<State, middleware.EventsState<State>> =
-    <State>(events: middleware.Events<State> = {}) =>
+const genericEventMiddleware: <State>(events?: genericEventMiddleware.Events<State>) =>
+    ShioriMiddlewareWithState<State, genericEventMiddleware.EventsState<State>> =
+    <State>(events: genericEventMiddleware.Events<State> = {}) =>
     ({
-        request: async function genericEventMiddleware(ctx, next) {
+        request: async function genericEventRequestMiddleware(ctx, next) {
             const id = ctx.request.headers.ID as string;
             const event = ctx.state.events[id];
             if (event) {
@@ -23,7 +23,7 @@ const middleware: <State>(events?: middleware.Events<State>) =>
     });
 
 // tslint:disable-next-line no-namespace
-namespace middleware {
+namespace genericEventMiddleware {
     export type SanaRequestCallback<State> =
         (ctx: RequestContext<State & EventsState<State>>) => RequestCallbackReturnValue;
 
@@ -36,4 +36,4 @@ namespace middleware {
     }
 }
 
-export = middleware;
+export = genericEventMiddleware;

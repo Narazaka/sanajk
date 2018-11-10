@@ -1,9 +1,9 @@
 import * as shiorack from "shiorack";
 import { InternalServerError } from "shiori-request-helper";
 
-const middleware: shiorack.ShioriMiddleware<{}> = {
+const errorResponseMiddleware: shiorack.ShioriMiddleware<{}> = {
     /** unhandled error to internal server error response */
-    request: async function errorResponseMiddleware(_ctx, next) {
+    request: async function errorResponseRequestMiddleware(_ctx, next) {
         try {
             return await next();
         } catch (error) {
@@ -12,4 +12,4 @@ const middleware: shiorack.ShioriMiddleware<{}> = {
     },
 };
 
-export = middleware;
+export = errorResponseMiddleware;

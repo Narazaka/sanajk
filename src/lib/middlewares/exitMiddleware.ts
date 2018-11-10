@@ -1,10 +1,10 @@
 import * as shiorack from "shiorack";
 
-const middleware: shiorack.ShioriMiddleware<{}> = {
-    unload: async function exitMiddleware(_ctx, next) {
+const exitMiddleware: shiorack.ShioriMiddleware<{}> = {
+    unload: async function exitUnloadMiddleware(_ctx, next) {
         await next();
         process.exit();
     },
 };
 
-export = middleware;
+export = exitMiddleware;

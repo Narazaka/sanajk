@@ -1,9 +1,9 @@
 import * as shiorack from "shiorack";
 import { DefaultHeadersState } from "./completeResponseMiddleware";
 
-const middleware: shiorack.ShioriMiddleware<DefaultHeadersState> = {
+const senderMiddleware: shiorack.ShioriMiddleware<DefaultHeadersState> = {
     /** set ownerghostname to sender */
-    request: function senderMiddleware(ctx, next) {
+    request: function senderRequestMiddleware(ctx, next) {
         if (ctx.request.headers.ID === "ownerghostname") {
             const sender = ctx.request.headers.Reference(0);
             if (typeof sender === "string" && sender.length) {
@@ -15,4 +15,4 @@ const middleware: shiorack.ShioriMiddleware<DefaultHeadersState> = {
     },
 };
 
-export = middleware;
+export = senderMiddleware;

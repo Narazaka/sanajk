@@ -1,21 +1,21 @@
 import * as shiorack from "shiorack";
 
-const middleware: () => shiorack.ShioriMiddlewareWithState<{}, middleware.DirpathState> = () =>
+const dirpathMiddleware: () => shiorack.ShioriMiddlewareWithState<{}, dirpathMiddleware.DirpathState> = () =>
     ({
-        load: function dirpathMiddleware(ctx, next) {
+        load: function dirpathLoadMiddleware(ctx, next) {
             ctx.state.dirpath = ctx.dirpath;
 
             return next();
         },
         // tslint:disable-next-line no-object-literal-type-assertion
-        state: {} as middleware.DirpathState,
+        state: {} as dirpathMiddleware.DirpathState,
     });
 
 // tslint:disable-next-line no-namespace
-namespace middleware {
+namespace dirpathMiddleware {
     export interface DirpathState {
         dirpath: string;
     }
 }
 
-export = middleware;
+export = dirpathMiddleware;
