@@ -19,7 +19,6 @@
     "doc": "typedoc --mode file --out doc --readme Readme.md --disableOutputCheck src/lib && cd doc && git status && cd .."
   },
   "dependencies": {
-    "debug": "^4.0.0",
     "fso": "^2.6.3",
     "shiorack": "^2.2.0",
     "shiori-request-helper": "^2.3.0",
