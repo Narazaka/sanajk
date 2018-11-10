@@ -29,7 +29,7 @@
         "no-inferred-empty-object-type": false,
         "triple-equals": [
             true,
-            "allow-null-check"
+            "allow-undefined-check"
         ],
         "no-namespace": false,
         "no-unused-variable": false,

@@ -12,8 +12,8 @@ const genericEventMiddleware: <State>(events?: genericEventMiddleware.Events<Sta
                 return handleRequestLazy(ctx.request, async () => {
                     const response = await event(ctx);
 
-                    // tslint:disable-next-line no-null-keyword strict-type-predicates
-                    return response == null ? next() : response; // 返り値がなかったら後続ミドルへ
+                    // tslint:disable-next-line strict-type-predicates
+                    return response == undefined ? next() : response; // 返り値がなかったら後続ミドルへ
                 });
             } else {
                 return handleRequestLazy(ctx.request, next);
