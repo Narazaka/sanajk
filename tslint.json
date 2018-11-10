@@ -33,6 +33,7 @@
         ],
         "no-namespace": false,
         "no-unused-variable": false,
-        "file-name-casing": false
+        "file-name-casing": false,
+        "completed-docs": false
     }
 }
