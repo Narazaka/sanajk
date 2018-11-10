@@ -7,6 +7,7 @@ import {
     UnloadMiddleware,
 } from "shiorack";
 import * as completeResponseMiddleware from "../lib/middlewares/completeResponseMiddleware";
+import * as defaultEventMiddleware from "../lib/middlewares/defaultEventMiddleware";
 import * as dirpathMiddleware from "../lib/middlewares/dirpathMiddleware";
 import * as errorResponseMiddleware from "../lib/middlewares/errorResponseMiddleware";
 import * as exitMiddleware from "../lib/middlewares/exitMiddleware";
@@ -31,6 +32,7 @@ export class SanaShioriBuilder<State = {}> extends ShioriBuilder<State> {
             .useErrorResponse()
             .use(senderMiddleware)
             .useGenericEvent(options.events)
+            .useDefaultEvent()
             ;
     }
 
@@ -46,6 +48,8 @@ export class SanaShioriBuilder<State = {}> extends ShioriBuilder<State> {
     useErrorResponse() { return this.use(errorResponseMiddleware); }
     /** must be after completeResponse */
     useGenericEvent(events?: genericEventMiddleware.Events<State>) { return this.use(genericEventMiddleware(events)); }
+    /** must be after completeResponse */
+    useDefaultEvent() { return this.use(defaultEventMiddleware); }
 
     /**
      * add middleware

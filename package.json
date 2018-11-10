@@ -3,17 +3,17 @@
   "version": "0.1.1",
   "description": "Ukagaka SHIORI subsystem 'SanaJK'",
   "keywords": [],
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./dist/lib/index.js",
+  "types": "./dist/lib/index.d.ts",
   "files": [
-    "lib",
+    "dist/lib",
     "gen"
   ],
   "scripts": {
     "prepare": "npm run dist",
     "prepublishOnly": "npm run lint && npm run test",
     "dist": "shx rm -rf dist && tsc",
-    "clean": "shx rm -rf lib \"test/**/*.{ts,js,map}\"",
+    "clean": "shx rm -rf dist",
     "test": "mocha",
     "lint": "tslint -p . -t verbose",
     "docdist": "cd doc && git clean -fd && git rm -rf * && cd .. && npm run doc && cd doc && touch .nojekyll && git add . && git commit -m doc && git push",

@@ -3,6 +3,4 @@ npm-debug.log
 yarn.lock
 /coverage
 /doc
-/lib
-/test
-!/test/mocha.opts
+/dist
