@@ -35,7 +35,7 @@ export class AutoTalks<State> {
 
     weight(ctx: AutoTalkRequestContext<State>) {
         if (this.staticWeight instanceof Function) {
-            return this.staticWeight(ctx);
+            return Math.max(0, this.staticWeight(ctx));
         } else if (this.staticWeight >= 0) {
             return this.staticWeight;
         } else {
@@ -87,7 +87,9 @@ export class AutoTalks<State> {
         const targetWeight = Math.random() * this.childrenWeightSum(ctx);
         let weight = 0;
         for (const talk of this.talks) {
-            weight += talk instanceof AutoTalks ? talk.weight(ctx) : 1;
+            const talkWeight = talk instanceof AutoTalks ? talk.weight(ctx) : 1;
+            if (!talkWeight) continue;
+            weight += talkWeight;
             if (weight >= targetWeight) return talk instanceof AutoTalks ? talk.choose(ctx) : new AutoTalk(talk);
         }
 
