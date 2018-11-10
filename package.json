@@ -16,7 +16,7 @@
     "test": "mocha",
     "lint": "tslint -p . -t verbose",
     "docdist": "cd doc && git clean -fd && git rm -rf * && cd .. && npm run doc && cd doc && touch .nojekyll && git add . && git commit -m doc && git push",
-    "doc": "typedoc --mode file --out doc --readme Readme.md --disableOutputCheck src && cd doc && git status && cd .."
+    "doc": "typedoc --mode file --out doc --readme Readme.md --disableOutputCheck src/lib && cd doc && git status && cd .."
   },
   "dependencies": {
     "debug": "^4.0.0",
