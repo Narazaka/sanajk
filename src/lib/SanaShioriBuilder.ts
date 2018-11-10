@@ -6,6 +6,7 @@ import {
     ShioriMiddlewareWithState,
     UnloadMiddleware,
 } from "shiorack";
+import * as autoTalkMiddleware from "../lib/middlewares/autoTalkMiddleware";
 import * as completeResponseMiddleware from "../lib/middlewares/completeResponseMiddleware";
 import * as defaultEventMiddleware from "../lib/middlewares/defaultEventMiddleware";
 import * as dirpathMiddleware from "../lib/middlewares/dirpathMiddleware";
@@ -14,11 +15,17 @@ import * as exitMiddleware from "../lib/middlewares/exitMiddleware";
 import * as genericEventMiddleware from "../lib/middlewares/genericEventMiddleware";
 import * as saveLoadMiddleware from "../lib/middlewares/saveLoadMiddleware";
 import * as senderMiddleware from "../lib/middlewares/senderMiddleware";
+import { AutoTalks } from "./AutoTalks";
+import { AutoTalkTrigger, AutoTalkTriggerSettings } from "./AutoTalkTrigger";
+import { AutoTalkLike, AutoTalkTags } from "./AutoTalkTypes";
 
 export interface UseDefaultOption<State> {
     save?: string;
     events?: genericEventMiddleware.Events<
         State & dirpathMiddleware.DirpathState & completeResponseMiddleware.DefaultHeadersState>;
+    autoTalkTags?: AutoTalkTags;
+    autoTalkTrigger?: AutoTalkTrigger | AutoTalkTriggerSettings;
+    autoTalks?: Array<AutoTalkLike<State>> | AutoTalks<State>;
 }
 
 /** SHIORI subsystem interface builder */
@@ -33,6 +40,11 @@ export class SanaShioriBuilder<State = {}> extends ShioriBuilder<State> {
             .useErrorResponse()
             .useSender()
             .useGenericEvent(options.events)
+            .useAutoTalk({
+                autoTalkTags: options.autoTalkTags,
+                autoTalkTrigger: options.autoTalkTrigger,
+                autoTalks: options.autoTalks as any,
+            })
             .useDefaultEvent()
             ;
     }
@@ -49,6 +61,10 @@ export class SanaShioriBuilder<State = {}> extends ShioriBuilder<State> {
     useErrorResponse() { return this.use(errorResponseMiddleware); }
     /** must be after completeResponse */
     useSender() { return this.use(senderMiddleware as any); }
+    /** must be after completeResponse */
+    useAutoTalk(options: autoTalkMiddleware.Options<State> = {}) {
+        return this.use(autoTalkMiddleware(options));
+    }
     /** must be after completeResponse */
     useGenericEvent(events?: genericEventMiddleware.Events<State>) { return this.use(genericEventMiddleware(events)); }
     /** must be after completeResponse */

@@ -1,3 +1,4 @@
+import * as autoTalkMiddleware from "./autoTalkMiddleware";
 import * as completeResponseMiddleware from "./completeResponseMiddleware";
 import * as defaultEventMiddleware from "./defaultEventMiddleware";
 import * as dirpathMiddleware from "./dirpathMiddleware";
@@ -8,6 +9,7 @@ import * as saveLoadMiddleware from "./saveLoadMiddleware";
 import * as senderMiddleware from "./senderMiddleware";
 
 export {
+    autoTalkMiddleware,
     completeResponseMiddleware,
     defaultEventMiddleware,
     dirpathMiddleware,
