@@ -30,7 +30,7 @@ export class SanaShioriBuilder<State = {}> extends ShioriBuilder<State> {
             .useSaveLoad<SaveData>(options.save)
             .useCompleteResponse()
             .useErrorResponse()
-            .use(senderMiddleware)
+            .useSender()
             .useGenericEvent(options.events)
             .useDefaultEvent()
             ;
@@ -46,6 +46,8 @@ export class SanaShioriBuilder<State = {}> extends ShioriBuilder<State> {
     useCompleteResponse() { return this.use(completeResponseMiddleware()); }
     /** must be after completeResponse */
     useErrorResponse() { return this.use(errorResponseMiddleware); }
+    /** must be after completeResponse */
+    useSender() { return this.use(senderMiddleware as any); }
     /** must be after completeResponse */
     useGenericEvent(events?: genericEventMiddleware.Events<State>) { return this.use(genericEventMiddleware(events)); }
     /** must be after completeResponse */
