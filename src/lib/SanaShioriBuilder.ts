@@ -17,7 +17,8 @@ import * as senderMiddleware from "../lib/middlewares/senderMiddleware";
 
 export interface UseDefaultOption<State> {
     save?: string;
-    events?: genericEventMiddleware.Events<State>;
+    events?: genericEventMiddleware.Events<
+        State & dirpathMiddleware.DirpathState & completeResponseMiddleware.DefaultHeadersState>;
 }
 
 /** SHIORI subsystem interface builder */
@@ -82,7 +83,7 @@ export class SanaShioriBuilder<State = {}> extends ShioriBuilder<State> {
     useLoad<AddState>(middleware: LoadMiddleware<State & AddState>, state: AddState):
         SanaShioriBuilder<State & AddState>;
     useLoad<AddState = {}>(middleware: LoadMiddleware<State & AddState>, state?: AddState) {
-        return super.useLoad(middleware, state);
+        return super.useLoad(middleware, state as AddState);
     }
 
     /**
@@ -94,7 +95,7 @@ export class SanaShioriBuilder<State = {}> extends ShioriBuilder<State> {
     useRequest<AddState>(middleware: RequestMiddleware<State & AddState>, state: AddState):
         SanaShioriBuilder<State & AddState>;
     useRequest<AddState = {}>(middleware: RequestMiddleware<State & AddState>, state?: AddState) {
-        return super.useRequest(middleware, state);
+        return super.useRequest(middleware, state as AddState);
     }
 
     /**
@@ -106,6 +107,6 @@ export class SanaShioriBuilder<State = {}> extends ShioriBuilder<State> {
     useUnload<AddState>(middleware: UnloadMiddleware<State & AddState>, state: AddState):
         SanaShioriBuilder<State & AddState>;
     useUnload<AddState = {}>(middleware: UnloadMiddleware<State & AddState>, state?: AddState) {
-        return super.useUnload(middleware, state);
+        return super.useUnload(middleware, state as AddState);
     }
 }

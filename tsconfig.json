@@ -14,7 +14,9 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "outDir": "dist",
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "outDir": "dist"
   },
   "include": [
     "src/lib",
