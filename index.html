@@ -64,24 +64,23 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="-sanajk-https-github-com-narazaka-sanajk-"><a href="https://github.com/Narazaka/sanajk">SanaJK</a></h1>
+				<h1 id="sanajk"><a href="https://github.com/Narazaka/sanajk">SanaJK</a></h1>
 				<p><a href="https://www.npmjs.com/package/sanajk"><img src="https://img.shields.io/npm/v/sanajk.svg" alt="npm"></a>
 					<a href="https://www.npmjs.com/package/sanajk"><img src="https://img.shields.io/npm/l/sanajk.svg" alt="npm license"></a>
 					<a href="https://www.npmjs.com/package/sanajk"><img src="https://img.shields.io/npm/dt/sanajk.svg" alt="npm download total"></a>
 				<a href="https://www.npmjs.com/package/sanajk"><img src="https://img.shields.io/npm/dm/sanajk.svg" alt="npm download by month"></a></p>
-				<p><a href="https://david-dm.org/Narazaka/sanajk"><img src="https://david-dm.org/Narazaka/sanajk.svg" alt="Dependency Status"></a>
-					<a href="https://david-dm.org/Narazaka/sanajk#info=devDependencies"><img src="https://david-dm.org/Narazaka/sanajk/dev-status.svg" alt="devDependency Status"></a>
-					<a href="https://travis-ci.org/Narazaka/sanajk"><img src="https://travis-ci.org/Narazaka/sanajk.svg" alt="Travis Build Status"></a>
-					<a href="https://ci.appveyor.com/project/Narazaka/sanajk"><img src="https://ci.appveyor.com/api/projects/status/github/Narazaka/sanajk?svg=true" alt="AppVeyor Build Status"></a>
+				<p><a href="https://david-dm.org/Narazaka/sanajk"><img src="https://david-dm.org/Narazaka/sanajk/status.svg" alt="Dependency Status"></a>
+					<a href="https://david-dm.org/Narazaka/sanajk?type=dev"><img src="https://david-dm.org/Narazaka/sanajk/dev-status.svg" alt="devDependency Status"></a>
+					<a href="https://travis-ci.org/Narazaka/sanajk"><img src="https://travis-ci.org/Narazaka/sanajk.svg?branch=master" alt="Travis Build Status"></a>
+					<a href="https://ci.appveyor.com/project/Narazaka/sanajk"><img src="https://ci.appveyor.com/api/projects/status/github/Narazaka/sanajk?svg=true&branch=master" alt="AppVeyor Build Status"></a>
 					<a href="https://codecov.io/github/Narazaka/sanajk?branch=master"><img src="https://codecov.io/github/Narazaka/sanajk/coverage.svg?branch=master" alt="codecov.io"></a>
 					<a href="https://codeclimate.com/github/Narazaka/sanajk"><img src="https://codeclimate.com/github/Narazaka/sanajk/badges/gpa.svg" alt="Code Climate"></a>
 				<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/Narazaka/sanajk.svg" alt="Greenkeeper badge"></a></p>
 				<p>Ukagaka SHIORI subsystem &#39;SanaJK&#39;</p>
 				<h2 id="install">Install</h2>
 				<p>npm:</p>
-				<pre><code>npm <span class="hljs-keyword">install</span> sanajk
-</code></pre><h2 id="usage">Usage</h2>
-				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { SanaShioriBuilder } <span class="hljs-keyword">from</span> <span class="hljs-string">"sanajk"</span>;
+				<pre><code>npm <span class="hljs-keyword">install</span> sanajk</code></pre><h2 id="usage">Usage</h2>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { SanaShioriBuilder } <span class="hljs-keyword">from</span> <span class="hljs-string">"sanajk"</span>;
 
 <span class="hljs-keyword">const</span> builder = <span class="hljs-keyword">new</span> SanaShioriBuilder().useDefaults();
 
@@ -91,6 +90,7 @@ events.OnBoot = <span class="hljs-function"><span class="hljs-params">()</span> 
 
 <span class="hljs-keyword">export</span> = builder.build();
 </code></pre>
+				<pre><code class="language-bash">shiolinkjs ./shiori.js</code></pre>
 				<h2 id="api">API</h2>
 				<p><a href="https://narazaka.github.io/sanajk/">https://narazaka.github.io/sanajk/</a></p>
 				<h2 id="license">License</h2>
@@ -103,40 +103,106 @@ events.OnBoot = <span class="hljs-function"><span class="hljs-params">()</span> 
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_lib_sanashioribuilder_.html">"lib/<wbr>Sana<wbr>Shiori<wbr>Builder"</a>
+					<li class=" tsd-kind-module tsd-has-type-parameter">
+						<a href="modules/autotalkmiddleware.html">auto<wbr>Talk<wbr>Middleware</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_lib_index_.html">"lib/index"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/completeresponsemiddleware.html">complete<wbr>Response<wbr>Middleware</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_lib_middlewares_completeresponsemiddleware_.html">"lib/middlewares/complete<wbr>Response<wbr>Middleware"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/dirpathmiddleware.html">dirpath<wbr>Middleware</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_lib_middlewares_dirpathmiddleware_.html">"lib/middlewares/dirpath<wbr>Middleware"</a>
+					<li class=" tsd-kind-module tsd-has-type-parameter">
+						<a href="modules/genericeventmiddleware.html">generic<wbr>Event<wbr>Middleware</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_lib_middlewares_errorresponsemiddleware_.html">"lib/middlewares/error<wbr>Response<wbr>Middleware"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_lib_middlewares_exitmiddleware_.html">"lib/middlewares/exit<wbr>Middleware"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_lib_middlewares_genericeventmiddleware_.html">"lib/middlewares/generic<wbr>Event<wbr>Middleware"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_lib_middlewares_index_.html">"lib/middlewares/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_lib_middlewares_sendermiddleware_.html">"lib/middlewares/sender<wbr>Middleware"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_test_basic_.html">"test/basic"</a>
+					<li class=" tsd-kind-module tsd-has-type-parameter">
+						<a href="modules/saveloadmiddleware.html">save<wbr>Load<wbr>Middleware</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/autotalk.html" class="tsd-kind-icon">Auto<wbr>Talk</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/autotalkchooser.html" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Chooser</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/autotalkstiggerbase.html" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Stigger<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/autotalktrigger.html" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Trigger</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/autotalks.html" class="tsd-kind-icon">Auto<wbr>Talks</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/chaintalk.html" class="tsd-kind-icon">Chain<wbr>Talk</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/chaintalks.html" class="tsd-kind-icon">Chain<wbr>Talks</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/sanashioribuilder.html" class="tsd-kind-icon">Sana<wbr>Shiori<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/autotalksstate.html" class="tsd-kind-icon">Auto<wbr>Talks<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/usedefaultoption.html" class="tsd-kind-icon">Use<wbr>Default<wbr>Option</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#autotalklike" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Like</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#autotalkrequestcallback" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Request<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#autotalkrequestcontext" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Request<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#autotalktags" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Tags</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#autotalktriggersettings" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Trigger<wbr>Settings</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#autotalkweight" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Weight</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#auto" class="tsd-kind-icon">auto</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#autow" class="tsd-kind-icon">autow</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#chain" class="tsd-kind-icon">chain</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#chainw" class="tsd-kind-icon">chainw</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#endchain" class="tsd-kind-icon">endchain</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#endchainw" class="tsd-kind-icon">endchainw</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#defaulteventmiddleware" class="tsd-kind-icon">default<wbr>Event<wbr>Middleware</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-is-not-exported">
+						<a href="globals.html#defaultevents" class="tsd-kind-icon">default<wbr>Events</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#errorresponsemiddleware" class="tsd-kind-icon">error<wbr>Response<wbr>Middleware</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#exitmiddleware" class="tsd-kind-icon">exit<wbr>Middleware</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#sendermiddleware" class="tsd-kind-icon">sender<wbr>Middleware</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

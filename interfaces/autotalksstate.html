@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DirpathState | sanajk</title>
+	<title>AutoTalksState | sanajk</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,27 +56,29 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_lib_middlewares_dirpathmiddleware_.html">&quot;lib/middlewares/dirpathMiddleware&quot;</a>
-				</li>
-				<li>
-					<a href="../modules/_lib_middlewares_dirpathmiddleware_.middleware.html">middleware</a>
-				</li>
-				<li>
-					<a href="_lib_middlewares_dirpathmiddleware_.middleware.dirpathstate.html">DirpathState</a>
+					<a href="autotalksstate.html">AutoTalksState</a>
 				</li>
 			</ul>
-			<h1>Interface DirpathState</h1>
+			<h1>Interface AutoTalksState&lt;State&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>State</h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DirpathState</span>
+						<span class="target">AutoTalksState</span>
 					</li>
 				</ul>
 			</section>
@@ -87,7 +89,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_lib_middlewares_dirpathmiddleware_.middleware.dirpathstate.html#dirpath" class="tsd-kind-icon">dirpath</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="autotalksstate.html#autotalkchooser" class="tsd-kind-icon">auto<wbr>Talk<wbr>Chooser</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="autotalksstate.html#autotalktrigger" class="tsd-kind-icon">auto<wbr>Talk<wbr>Trigger</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="autotalksstate.html#autotalks" class="tsd-kind-icon">auto<wbr>Talks</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,12 +100,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="dirpath" class="tsd-anchor"></a>
-					<h3>dirpath</h3>
-					<div class="tsd-signature tsd-kind-icon">dirpath<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="autotalkchooser" class="tsd-anchor"></a>
+					<h3>auto<wbr>Talk<wbr>Chooser</h3>
+					<div class="tsd-signature tsd-kind-icon">auto<wbr>Talk<wbr>Chooser<span class="tsd-signature-symbol">:</span> <a href="../classes/autotalkchooser.html" class="tsd-signature-type">AutoTalkChooser</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Narazaka/sanajk/blob/7b0f130/src/lib/middlewares/dirpathMiddleware.ts#L17">lib/middlewares/dirpathMiddleware.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/Narazaka/sanajk/blob/f2cbb2b/src/lib/AutoTalkTypes.ts#L8">AutoTalkTypes.ts:8</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="autotalktrigger" class="tsd-anchor"></a>
+					<h3>auto<wbr>Talk<wbr>Trigger</h3>
+					<div class="tsd-signature tsd-kind-icon">auto<wbr>Talk<wbr>Trigger<span class="tsd-signature-symbol">:</span> <a href="../classes/autotalktrigger.html" class="tsd-signature-type">AutoTalkTrigger</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Narazaka/sanajk/blob/f2cbb2b/src/lib/AutoTalkTypes.ts#L9">AutoTalkTypes.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="autotalks" class="tsd-anchor"></a>
+					<h3>auto<wbr>Talks</h3>
+					<div class="tsd-signature tsd-kind-icon">auto<wbr>Talks<span class="tsd-signature-symbol">:</span> <a href="../classes/autotalks.html" class="tsd-signature-type">AutoTalks</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">State</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Narazaka/sanajk/blob/f2cbb2b/src/lib/AutoTalkTypes.ts#L10">AutoTalkTypes.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -113,57 +137,106 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_lib_sanashioribuilder_.html">"lib/<wbr>Sana<wbr>Shiori<wbr>Builder"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_lib_index_.html">"lib/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_lib_middlewares_completeresponsemiddleware_.html">"lib/middlewares/complete<wbr>Response<wbr>Middleware"</a>
-					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="../modules/_lib_middlewares_dirpathmiddleware_.html">"lib/middlewares/dirpath<wbr>Middleware"</a>
-						<ul>
-							<li class="current tsd-kind-module tsd-parent-kind-external-module">
-								<a href="../modules/_lib_middlewares_dirpathmiddleware_.middleware.html">middleware</a>
-							</li>
-						</ul>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_lib_middlewares_errorresponsemiddleware_.html">"lib/middlewares/error<wbr>Response<wbr>Middleware"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_lib_middlewares_exitmiddleware_.html">"lib/middlewares/exit<wbr>Middleware"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_lib_middlewares_genericeventmiddleware_.html">"lib/middlewares/generic<wbr>Event<wbr>Middleware"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_lib_middlewares_index_.html">"lib/middlewares/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_lib_middlewares_sendermiddleware_.html">"lib/middlewares/sender<wbr>Middleware"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_test_basic_.html">"test/basic"</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="../classes/autotalk.html" class="tsd-kind-icon">Auto<wbr>Talk</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="../classes/autotalkchooser.html" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Chooser</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/autotalkstiggerbase.html" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Stigger<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/autotalktrigger.html" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Trigger</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="../classes/autotalks.html" class="tsd-kind-icon">Auto<wbr>Talks</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="../classes/chaintalk.html" class="tsd-kind-icon">Chain<wbr>Talk</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="../classes/chaintalks.html" class="tsd-kind-icon">Chain<wbr>Talks</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="../classes/sanashioribuilder.html" class="tsd-kind-icon">Sana<wbr>Shiori<wbr>Builder</a>
+					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_lib_middlewares_dirpathmiddleware_.middleware.dirpathstate.html" class="tsd-kind-icon">Dirpath<wbr>State</a>
+					<li class="current tsd-kind-interface tsd-has-type-parameter">
+						<a href="autotalksstate.html" class="tsd-kind-icon">Auto<wbr>Talks<wbr>State</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_lib_middlewares_dirpathmiddleware_.middleware.dirpathstate.html#dirpath" class="tsd-kind-icon">dirpath</a>
+								<a href="autotalksstate.html#autotalkchooser" class="tsd-kind-icon">auto<wbr>Talk<wbr>Chooser</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="autotalksstate.html#autotalktrigger" class="tsd-kind-icon">auto<wbr>Talk<wbr>Trigger</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="autotalksstate.html#autotalks" class="tsd-kind-icon">auto<wbr>Talks</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="usedefaultoption.html" class="tsd-kind-icon">Use<wbr>Default<wbr>Option</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="../globals.html#autotalklike" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Like</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="../globals.html#autotalkrequestcallback" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Request<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="../globals.html#autotalkrequestcontext" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Request<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#autotalktags" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Tags</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#autotalktriggersettings" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Trigger<wbr>Settings</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="../globals.html#autotalkweight" class="tsd-kind-icon">Auto<wbr>Talk<wbr>Weight</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="../globals.html#auto" class="tsd-kind-icon">auto</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="../globals.html#autow" class="tsd-kind-icon">autow</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="../globals.html#chain" class="tsd-kind-icon">chain</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="../globals.html#chainw" class="tsd-kind-icon">chainw</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="../globals.html#endchain" class="tsd-kind-icon">endchain</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="../globals.html#endchainw" class="tsd-kind-icon">endchainw</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="../globals.html#defaulteventmiddleware" class="tsd-kind-icon">default<wbr>Event<wbr>Middleware</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-is-not-exported">
+						<a href="../globals.html#defaultevents" class="tsd-kind-icon">default<wbr>Events</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="../globals.html#errorresponsemiddleware" class="tsd-kind-icon">error<wbr>Response<wbr>Middleware</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="../globals.html#exitmiddleware" class="tsd-kind-icon">exit<wbr>Middleware</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="../globals.html#sendermiddleware" class="tsd-kind-icon">sender<wbr>Middleware</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
