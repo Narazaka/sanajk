@@ -1,6 +1,7 @@
 import { FileSystemObject } from "fso";
 import * as shiorack from "shiorack";
 
+// tslint:disable-next-line completed-docs
 function saveLoadMiddleware<SaveData>(filePath: string):
     shiorack.ShioriMiddlewareWithState<{}, saveLoadMiddleware.SaveDataState<SaveData>> {
     const file = new FileSystemObject(filePath);

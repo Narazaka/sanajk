@@ -26,6 +26,8 @@
         ],
         "no-unsafe-any": false,
         "strict-boolean-expressions": false,
-        "no-inferred-empty-object-type": false
+        "no-inferred-empty-object-type": false,
+        "no-unused-variable": false,
+        "file-name-casing": false
     }
 }
