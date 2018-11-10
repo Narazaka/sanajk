@@ -28,7 +28,6 @@ function saveLoadMiddleware<SaveData>(filePath: string):
     };
 }
 
-// tslint:disable-next-line no-namespace
 namespace saveLoadMiddleware {
     export interface SaveDataState<SaveData> {
         saveData?: SaveData;

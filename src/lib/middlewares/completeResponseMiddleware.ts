@@ -10,12 +10,10 @@ const completeResponseMiddleware:
         state: {defaultHeaders: {}},
     });
 
-// tslint:disable-next-line no-namespace
 namespace completeResponseMiddleware {
     export interface DefaultHeadersState {
         defaultHeaders: {[name: string]: string};
     }
 }
 
-// tslint:disable-next-line no-default-export
 export = completeResponseMiddleware;

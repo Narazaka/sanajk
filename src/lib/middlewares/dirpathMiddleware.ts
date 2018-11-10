@@ -11,7 +11,6 @@ const dirpathMiddleware: () => shiorack.ShioriMiddlewareWithState<{}, dirpathMid
         state: {} as dirpathMiddleware.DirpathState,
     });
 
-// tslint:disable-next-line no-namespace
 namespace dirpathMiddleware {
     export interface DirpathState {
         dirpath: string;

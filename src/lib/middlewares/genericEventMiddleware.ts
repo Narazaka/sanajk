@@ -12,7 +12,7 @@ const genericEventMiddleware: <State>(events?: genericEventMiddleware.Events<Sta
                 return handleRequestLazy(ctx.request, async () => {
                     const response = await event(ctx);
 
-                    // tslint:disable-next-line triple-equals no-null-keyword strict-type-predicates
+                    // tslint:disable-next-line no-null-keyword strict-type-predicates
                     return response == null ? next() : response; // 返り値がなかったら後続ミドルへ
                 });
             } else {
@@ -22,7 +22,6 @@ const genericEventMiddleware: <State>(events?: genericEventMiddleware.Events<Sta
         state: { events },
     });
 
-// tslint:disable-next-line no-namespace
 namespace genericEventMiddleware {
     export type SanaRequestCallback<State> =
         (ctx: RequestContext<State & EventsState<State>>) => RequestCallbackReturnValue;
