@@ -19,7 +19,9 @@ const builder = new SanaJK.SanaShioriBuilder().use({state}).useAutoTalk({
         autow(1, "a"),
         auto(["tag1"], "tag1"),
         autow(1, ["tag1"], "tag1"),
-        autow((ctx) => ctx.state.w + 1, "no"),
+        autow(0, "NO"),
+        autow(() => 0, "NO"),
+        autow((ctx) => ctx.state.w + 1, "w"),
         chain(
             "a",
             "b",
@@ -55,7 +57,9 @@ describe("SanaJK", () => {
                 for (let i = 0; i < 20000; ++i) {
                     const talk = autoTalkChooser.choose(ctx);
                     assert(talk.talk instanceof Function);
-                    assert(talk.exec(ctx));
+                    const result = talk.exec(ctx);
+                    assert(result);
+                    assert(result !== "NO");
                 }
             });
         });
