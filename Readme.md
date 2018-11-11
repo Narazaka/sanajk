@@ -15,6 +15,8 @@
 
 Ukagaka SHIORI subsystem 'SanaJK'
 
+see also [create-sanajk-ghost](https://github.com/Narazaka/create-sanajk-ghost)
+
 ## Install
 
 npm:
