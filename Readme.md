@@ -27,13 +27,49 @@ npm install sanajk
 ## Usage
 
 ```typescript
-import { SanaShioriBuilder } from "sanajk";
+import * as SanaJK from "sanajk";
 
-const builder = new SanaShioriBuilder().useDefaults();
+const r = String.raw;
+const myState = {
+    bar: "bar",
+    day: 0, // Sunday
+};
+
+const builder = new SanaJK.SanaShioriBuilder().use({state: myState}).useDefaults();
 
 const events = builder.state.events;
-const s = String.raw;
-events.OnBoot = () => s`\0\s[0]\e`;
+events.OnBoot = () => r`\0\s[0]Boot!\e`;
+events.OnMyEvent = (ctx) => r`\0\s[0]foo ${ctx.state.bar} baz\e`;
+
+const { auto, autow, chain } = SanaJK;
+const autoTalks = builder.state.autoTalks;
+autoTalks.add(
+    r`\0\s[0]random talk!\e`,
+    auto(["tag1"], r`\0\s[0]tagged random talk!\e`),
+    autow(
+        5,
+        r`\0\s[0]weight grouped random talk!\e`,
+        r`\0\s[0]one more!\e`,
+    ),
+    autow(
+        (ctx) => new Date().getDay() === ctx.state.day ? 1 : 0,
+        (ctx) => r`\0\s[0]Today is day=${ctx.state.day}!\e`,
+    ),
+    chain(
+        r`\0\s[0]chain talk!\e`,
+        auto(
+            chain(
+                r`\0\s[0]nested chain talk 1!\e`,
+                r`\0\s[0]one more!\e`,
+            ),
+            chain(
+                r`\0\s[0]nested chain talk 2!\e`,
+                r`\0\s[0]one more!\e`,
+            ),
+        ),
+        r`\0\s[0]done!\e`,
+    ),
+);
 
 export = builder.build();
 
