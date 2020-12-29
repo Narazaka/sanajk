@@ -8,10 +8,7 @@
 
 [![Dependency Status](https://david-dm.org/Narazaka/sanajk/status.svg)](https://david-dm.org/Narazaka/sanajk)
 [![devDependency Status](https://david-dm.org/Narazaka/sanajk/dev-status.svg)](https://david-dm.org/Narazaka/sanajk?type=dev)
-[![Travis Build Status](https://travis-ci.org/Narazaka/sanajk.svg?branch=master)](https://travis-ci.org/Narazaka/sanajk)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/Narazaka/sanajk?svg=true&branch=master)](https://ci.appveyor.com/project/Narazaka/sanajk)
-[![Code Climate](https://codeclimate.com/github/Narazaka/sanajk/badges/gpa.svg)](https://codeclimate.com/github/Narazaka/sanajk)
-[![Greenkeeper badge](https://badges.greenkeeper.io/Narazaka/sanajk.svg)](https://greenkeeper.io/)
+[![build](https://github.com/Narazaka/sanajk/workflows/build/badge.svg)](https://github.com/Narazaka/sanajk/actions?query=workflow:build)
 
 Ukagaka SHIORI subsystem 'SanaJK'
 
