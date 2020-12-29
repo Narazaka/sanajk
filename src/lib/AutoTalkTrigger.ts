@@ -15,7 +15,13 @@ export class AutoTalkStiggerBase {
     /** 間隔秒数の揺らぎ率 0～1 */
     fluctuationRate: number;
     /** 自動トークが有効であるか */
-    enabled: boolean;
+    get enabled() {
+        return this._enabled;
+    }
+    set enabled(value) {
+        this._enabled = value;
+    }
+    private _enabled?: boolean;
     /** 自動トークのカウントをすぐ始める */
     readonly autoStart: boolean;
 }
@@ -27,7 +33,6 @@ export type AutoTalkTriggerSettings = {
 export class AutoTalkTrigger extends AutoTalkStiggerBase {
     /** 自動トークのカウント */
     count = 0;
-    private _enabled!: boolean;
     private canTalkByCount = false;
     private timer?: NodeJS.Timeout;
     private currentInterval!: number;
@@ -39,11 +44,11 @@ export class AutoTalkTrigger extends AutoTalkStiggerBase {
     }
 
     get enabled() {
-        return this._enabled;
+        return super.enabled;
     }
 
     set enabled(value) {
-        this._enabled = value;
+        super.enabled = value;
         if (!value) this.count = 0;
     }
 

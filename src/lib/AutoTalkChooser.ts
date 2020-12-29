@@ -2,7 +2,7 @@ import { AutoTalk } from "./AutoTalks";
 import { AutoTalkRequestContext, AutoTalkTags } from "./AutoTalkTypes";
 import { ChainTalk } from "./ChainTalks";
 
-export class AutoTalkChooser<State> {
+export class AutoTalkChooser<State = Record<string, unknown>> {
     tags?: Set<string>;
     chainTalk?: ChainTalk<State>;
 
