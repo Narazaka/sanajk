@@ -1,12 +1,10 @@
+import * as assert from "power-assert";
 import { SanaShioriBuilder } from "../lib";
 
-// tslint:disable-next-line no-implicit-dependencies
-import * as assert from "power-assert";
-
-describe("SanaJK", function() {
-  context("without events", function() {
-    describe("#constructor", function() {
-      it("surely initialized", function() {
+describe("SanaJK", () => {
+  context("without events", () => {
+    describe("#constructor", () => {
+      it("surely initialized", () => {
         assert.doesNotThrow(() => new SanaShioriBuilder());
         assert(new SanaShioriBuilder() instanceof SanaShioriBuilder);
       });

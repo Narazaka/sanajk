@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb-typescript/base",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "rules": {
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
+    "import/prefer-default-export": 0,
+    "no-restricted-syntax": [
+      "error",
+      "LabeledStatement",
+      "WithStatement",
+      "ForInStatement"
+    ],
+    "@typescript-eslint/no-namespace": 0,
+    "@typescript-eslint/no-redeclare": 0,
+    "import/no-extraneous-dependencies": 0,
+    "no-plusplus": 0,
+    "no-continue": 0,
+    "no-underscore-dangle": 0
+  }
+}

@@ -9,13 +9,13 @@ import * as saveLoadMiddleware from "./saveLoadMiddleware";
 import * as senderMiddleware from "./senderMiddleware";
 
 export {
-    autoTalkMiddleware,
-    completeResponseMiddleware,
-    defaultEventMiddleware,
-    dirpathMiddleware,
-    errorResponseMiddleware,
-    exitMiddleware,
-    genericEventMiddleware,
-    saveLoadMiddleware,
-    senderMiddleware,
+  autoTalkMiddleware,
+  completeResponseMiddleware,
+  defaultEventMiddleware,
+  dirpathMiddleware,
+  errorResponseMiddleware,
+  exitMiddleware,
+  genericEventMiddleware,
+  saveLoadMiddleware,
+  senderMiddleware,
 };
